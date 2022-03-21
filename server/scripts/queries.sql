@@ -10,10 +10,10 @@ create table subjects (
 );
 insert into subjects (id, name, code, question_count) values (1, 'Data Structures and Algorithms', 'CS283', 2);
 insert into subjects (id, name, code, question_count) values (2, 'Database Management System', 'CS256', 0);
-insert into subjects (id, name, code, question_count) values (3, 'Operating System', 'CS048', 0);
-insert into subjects (id, name, code, question_count) values (4, 'Web Technology', 'CS112', 0);
+insert into subjects (id, name, code, question_count) values (3, 'Operating System', 'CS048', 2);
+insert into subjects (id, name, code, question_count) values (4, 'Web Technology', 'CS112', 1);
 insert into subjects (id, name, code, question_count) values (5, 'Computer Graphics', 'CS284', 0);
-insert into subjects (id, name, code, question_count) values (6, 'Software Engineering', 'CS084', 0);
+insert into subjects (id, name, code, question_count) values (6, 'Software Engineering', 'CS084', 1);
 
 
 create table questions (
@@ -31,6 +31,10 @@ create table questions (
 );
 insert into questions (id, subject_id, body, correct_answer, wrong1, wrong2, wrong3, votes, approved, explanation, tags) values (1, 'CS283', 'A queue follows __________', 'FIFO', 'Ordered array', 'Linear tree', 'LIFO', 2, 'no', '', '');
 insert into questions (id, subject_id, body, correct_answer, wrong1, wrong2, wrong3, votes, approved, explanation, tags) values (2, 'CS283', 'Process of removing an element from stack is called _______', 'Pop', 'Create', 'Push', 'Evaluation', 11, 'yes', '', '');
+insert into questions (id, subject_id, body, correct_answer, wrong1, wrong2, wrong3, votes, approved, explanation, tags) values (3, 'CS112', 'What does the abbreviation HTML stand for?', 'Hypertext Markup Language', 'Hypertext Markdown Language', 'HighText Markup Language', 'None of the above', 2, 'no', '', '');
+insert into questions (id, subject_id, body, correct_answer, wrong1, wrong2, wrong3, votes, approved, explanation, tags) values (4, 'CS084', '____________ is a software development activity that is not a part of software processes', 'Dependence', 'Development', 'Specification', 'Validation', 4, 'no', '', '');
+insert into questions (id, subject_id, body, correct_answer, wrong1, wrong2, wrong3, votes, approved, explanation, tags) values (5, 'CS048', 'To access the services of the operating system, the interface is provided by the ___________', 'System calls', 'API', 'Assembly instructions', 'Library', 10, 'yes', '', '');
+insert into questions (id, subject_id, body, correct_answer, wrong1, wrong2, wrong3, votes, approved, explanation, tags) values (6, 'CS048', 'CPU scheduling is the basis of ___________', ' multiprogramming operating systems', 'larger memory sized systems', 'multiprocessor systems', 'none of the mentioned', 16, 'no', '', '');
 
 
 create table users (
@@ -38,7 +42,7 @@ create table users (
 	email VARCHAR(50),
 	username VARCHAR(50) primary key,
 	password VARCHAR(50),
-	user_type enum('moderator', 'contributor') DEFAULT 'contributor',
+	user_type enum('moderator', 'contributor') DEFAULT 'contributor'
 );
 insert into users (name, email, username, password, user_type) values ('Micheil Guinn', 'mguinn0@paypal.com', 'mguinn0', '1RbkPwOdBG', 'moderator');
 insert into users (name, email, username, password, user_type) values ('Davidde Yitzovitz', 'dyitzovitz1@shop-pro.jp', 'dyitzovitz1', '0obelGPfKp', 'moderator');
