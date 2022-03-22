@@ -17,6 +17,6 @@ app.use(require('./routes/Helloworld'));
 
 const port = process.env.PORT || 3200;
 
-app.listen(port, () => {;
-    console.log('Server is up on port ' + port);
+app.listen(port, () => {
+   console.log('Server is up on port ' + port);
 });
